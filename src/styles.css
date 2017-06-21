@@ -1,1 +1,169 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f2f2f2;
+  min-height: 100%;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+}
+.navbar-main {
+  padding: 0;
+}
+
+.navbar-main .logo {
+  margin: 10px;
+}
+
+.navbar-main .navbar-toggler {
+  border: none;
+}
+
+.navbar-main .navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-main .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(49, 47, 37, .9)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/></svg>");
+}
+
+.navbar-main .navbar-toggler-right {
+  top: 1.5rem;
+  right: 1rem;
+  padding: 0;
+}
+
+.navbar-main .navbar-toggler-right .badge {
+  position: absolute;
+  bottom: -0.28rem;
+  left: -0.25rem;
+  padding: 0.15rem 0.27rem;
+  font-weight: 300;
+}
+
+.navbar-main .collpase.show {
+  background-color: #daaf00;
+}
+
+.navbar-main .cart-items .nav-item {
+  background-color: rgba(0, 0, 0, .2);
+  padding: 10px;
+}
+
+.navbar-main .cart-items .nav-item:not(:last-child) {
+  border-bottom: 2px solid rgba(255, 255, 255, .15);
+}
+
+.navbar-main .cart-items .nav-item .media .img-thumb {
+  max-width: 64px;
+  max-height: 64px;
+  margin-right: 10px;
+}
+
+.navbar-main .cart-items .nav-item .media .media-body h5 {
+  color: #fff;
+  font-weight: 300;
+  font-size: .8rem;
+}
+
+.navbar-main .cart-items .nav-item .media .media-body span {
+  display: block;
+  line-height: 1;
+  font-size: .7rem;
+  font-weight: bold;
+}
+
+.navbar-main .cart-items .nav-item .media .remove-item {
+  margin-top: .8rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.total-cart {
+  padding: 10px;
+}
+
+.total-cart span {
+  display: block;
+  line-height: 1;
+}
+
+#content{
+  padding-top:15px;
+}
+.list-thumbnail li{
+  width: 32px;
+  margin-bottom: 5px;
+  cursor:pointer;
+}
+.card{
+  height:100%;
+}
+.card-block .price{
+  padding-top: 30px;
+}
+.card-block .price h2{
+  font-size: 1.2rem;
+}
+.card-block .price h5{
+  font-size: .8rem;
+}
+.card-block .price .btn-add{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.card-block .product-title{
+  color:#757575;
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+.card-block h5 i{
+  color:#ffcd00;
+  margin-left: 10px;
+}
+.card-block .badge{
+  font-weight: 300;
+  padding: 10px;
+  position: relative;
+}
+.card-block .badge:after {
+  right: -23%;
+  top:1px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left-color:#0275d8;
+  border-width: 14px;
+  border-bottom-width: 16px;
+}
+
+.btn-sucess{
+  color:#fff !important;
+}
+.footer{
+  background-color: #3a3a3a;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
+.footer img{
+  display: block;
+  margin: 0 auto;
+}
+.divider{
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 0;
+}
+.bg-primary {
+  background-color: #ffcd00 !important;
+}
+
