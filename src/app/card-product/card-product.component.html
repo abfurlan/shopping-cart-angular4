@@ -1,21 +1,12 @@
 <section class="container-fluid" id="content">
   	<div class="row row-eq-height" id="row-content">
-		<div class="col-12 col-sm-12 col-md-4 mb-4">
+		<div *ngFor="let product of products" class="col-12 col-sm-12 col-md-4 mb-4">
 			<div class="card">
 				<div class="row card-block">
 					<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-1 thumbs">
 						<ul class="list-unstyled list-thumbnail">
-							<li>
-								<img class="img-fluid" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb_600x600-PU98460_1.jpg" alt="Smartphone Apple iPhone 7 128GB">
-							</li>
-							<li>
-								<img class="img-fluid" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb/__200x400-PU98460_2_c.jpg?v=2347575274" alt="Smartphone Apple iPhone 7 128GB">
-							</li>
-							<li>
-								<img class="img-fluid" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb/__200x400-PU98460_3_c.jpg?v=318433138" alt="Smartphone Apple iPhone 7 128GB">
-							</li>
-							<li>
-								<img class="img-fluid" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb/__200x400-PU98460_4_c.jpg?v=33273730" alt="Smartphone Apple iPhone 7 128GB">
+							<li *ngFor="let image of product.product.images">
+								<img class="img-fluid" src="{{image}}" alt="Smartphone Apple iPhone 7 128GB">
 							</li>
 						</ul>
 					</div>
@@ -23,14 +14,14 @@
 						<img class="img-fluid" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb_600x600-PU98460_1.jpg" alt="Smartphone Apple iPhone 7 128GB">
 					</div>
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8">
-						<h5 class="product-title">Smartphone Apple iPhone 7 128GB <i class="fa fa-heart-o"></i></h5>
+						<h5 class="product-title">{{product.product.name}} <i class="fa fa-heart-o"></i></h5>
 						<div class="clear-fix divider"></div>
 						<span class="badge badge-primary">MELHOR PREÇO</span>
 						<div class="price">
 							<div class="row">
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
-									<h2 class="text-success"><small>10x </small> R$389,90</h2>
-									<h5>ou <span class="text-success">R$3.509,10</span> à vista</h5>
+									<h2 class="text-success"><small>{{product.product.price.installments}}x </small> R$ {{product.product.price.installmentValue}}</h2>
+									<h5>ou <span class="text-success">R$ {{product.product.price.value}}</span> à vista</h5>
 								</div>
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12col-xl-6">
 									<button type="button" class="btn btn-success btn-sm btn-add" data-id="2321312"> 

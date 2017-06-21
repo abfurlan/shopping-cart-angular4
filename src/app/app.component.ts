@@ -8,13 +8,4 @@ import { default as swal } from 'sweetalert2'
 })
 export class AppComponent {
   
-
-  myAlert(){
-  	swal(
-	  'Good job!',
-	  'You clicked the button!',
-	  'success'
-	)
-  }
-
 }
