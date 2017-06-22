@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from './card-product.model';
 import {ProductsService} from './card-product.service';
-import {CartComponent} from '../cart/cart.component'
+import {CartService} from '../cart/cart.service'
 
 @Component({
   selector: 'app-card-product',
@@ -12,7 +12,7 @@ export class CardProductComponent implements OnInit {
 
   products : Product[]
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService, private cartService: CartService) { }
   //constructor() { }
 
   ngOnInit() {
@@ -21,20 +21,8 @@ export class CardProductComponent implements OnInit {
   }
 
   addCart(Product){
-    //recupera carrinho na sessão
-    let cartSession = sessionStorage.getItem("cart")
-    let cart = {items:[]};
-    //carrinho não está vazio
-    if(cartSession != null){
-      cart = JSON.parse(cartSession)
-    }
-    //adiciona no carrinho
-    cart.items.push(Product)
-    //salva na sessão
-    sessionStorage.setItem("cart",JSON.stringify(cart))
-    console.log(cart)
-    //sessionStorage.removeItem("cart")
     
+    this.cartService.addItem(Product)
 
   }
 

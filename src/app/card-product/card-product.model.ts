@@ -4,9 +4,9 @@ export interface Product {
 	  name: string
 	  images: string[]
 	  price	: {
-	  	value: string
-        installments: string,
-        installmentValue : string
+	  	value: number
+        installments: number,
+        installmentValue : number
 	  }
   }
   

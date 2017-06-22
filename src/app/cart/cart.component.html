@@ -1,5 +1,5 @@
-<ul class="navbar-nav cart-items">
-	<li class="nav-item" *ngFor="let product of products">
+<ul class="navbar-nav cart-items" *ngIf="items().length">
+	<li class="nav-item" *ngFor="let product of items()">
 		<div class="media">
 			<img class="img-thumb" src="{{product.images[0]}}" onError="this.src='/assets/img/no-img.jpg';" alt="{{product.name}}">
 			<div class="media-body">
@@ -7,12 +7,17 @@
 				<span>{{product.price.installments}}x de R$ {{product.price.installmentValue}}</span>
 				<span>ou R$ {{product.price.value}} à vista</span>
 			</div>
-			<span class="remove-item">x</span>
+			<span class="remove-item" (click)="removeItem(product)">x</span>
 		</div>
 	</li>
+	<li class="total-cart text-right">
+		<p>subtotal</p>
+		<span id="sub-ins">em {{installments}}x R$ {{totalIns}}</span>
+		<span id="sub-cash">ou R$ {{total}} à vista</span>
+	</li>
 </ul>
-<div class="total-cart text-right">
-	<p>subtotal</p>
-	<span id="sub-ins">{{totalIns}}</span>
-	<span id="sub-cash">{{total}}</span>
-</div>
+<ul class="navbar-nav cart-items" *ngIf="items().length == 0">
+	<li class="nav-item">
+		Seu carrinho está vazio :/
+	</li>
+</ul>

@@ -20,25 +20,4 @@ export class ProductsService {
         .catch(ErrorHandler.handleError)
     }
 
-    
-
-    /*
-    restaurantById(id: string): Observable<Restaurant>{
-      return this.http.get(`${MEAT_API}/restaurants/${id}`)
-        .map(response => response.json())
-        .catch(ErrorHandler.handleError)
-    }
-
-    reviewsOfRestaurant(id: string): Observable<any>{
-      return this.http.get(`${MEAT_API}/restaurants/${id}/reviews`)
-        .map(response => response.json())
-        .catch(ErrorHandler.handleError)
-    }
-
-    menuOfRestaurant(id: string): Observable<MenuItem[]>{
-      return this.http.get(`${MEAT_API}/restaurants/${id}/menu`)
-        .map(response => response.json())
-        .catch(ErrorHandler.handleError)
-    }
-    */
 }
