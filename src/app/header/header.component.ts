@@ -7,11 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-	items: string = "1"
-  	totalIns: string = "em 10x R$ 100,00"
-  	total: string = "ou R$ 1.000,00 à vista"
+    items: string = "1"
 
-  	constructor() { }
+    constructor() { }
 
   	ngOnInit() {
 

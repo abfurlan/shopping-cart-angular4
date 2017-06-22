@@ -18,9 +18,9 @@ export class ProductsService {
       return this.http.get('http://localhost:3000/items')
         .map(response => response.json())
         .catch(ErrorHandler.handleError)
-        
-        
     }
+
+    
 
     /*
     restaurantById(id: string): Observable<Restaurant>{

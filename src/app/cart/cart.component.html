@@ -1,12 +1,18 @@
 <ul class="navbar-nav cart-items">
-	<li class="nav-item">
+	<li class="nav-item" *ngFor="let product of products">
 		<div class="media">
-			<img class="img-thumb" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb_600x600-PU98460_1.jpg" alt="undefined">
+			<img class="img-thumb" src="{{product.images[0]}}" onError="this.src='/assets/img/no-img.jpg';" alt="{{product.name}}">
 			<div class="media-body">
-				<h5 class="mt-0">Smartphone Apple iPhone 7 128GB </h5>
-				<span>10x de R$389,90</span><span>ou R$3.509,10 à vista</span>
+				<h5 class="mt-0">{{product.name}} </h5>
+				<span>{{product.price.installments}}x de R$ {{product.price.installmentValue}}</span>
+				<span>ou R$ {{product.price.value}} à vista</span>
 			</div>
 			<span class="remove-item">x</span>
 		</div>
 	</li>
 </ul>
+<div class="total-cart text-right">
+	<p>subtotal</p>
+	<span id="sub-ins">{{totalIns}}</span>
+	<span id="sub-cash">{{total}}</span>
+</div>

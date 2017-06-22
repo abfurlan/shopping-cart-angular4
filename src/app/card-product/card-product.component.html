@@ -6,12 +6,15 @@
 					<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-1 thumbs">
 						<ul class="list-unstyled list-thumbnail">
 							<li *ngFor="let image of product.product.images">
-								<img class="img-fluid" src="{{image}}" alt="Smartphone Apple iPhone 7 128GB">
+								<img class="img-fluid" onError="this.src='/assets/img/no-img.jpg';"
+                src="{{image}}" alt="{{product.product.name}}"
+                (click)="mainImg.src=image">
 							</li>
 						</ul>
 					</div>
 					<div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-3 img-product-show">
-						<img class="img-fluid" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb_600x600-PU98460_1.jpg" alt="Smartphone Apple iPhone 7 128GB">
+						<img class="img-fluid" src="{{product.product.images[0]}}"
+            onError="this.src='/assets/img/no-img.jpg';" #mainImg alt="{{product.product.name}}">
 					</div>
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8">
 						<h5 class="product-title">{{product.product.name}} <i class="fa fa-heart-o"></i></h5>
@@ -20,11 +23,18 @@
 						<div class="price">
 							<div class="row">
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
-									<h2 class="text-success"><small>{{product.product.price.installments}}x </small> R$ {{product.product.price.installmentValue}}</h2>
-									<h5>ou <span class="text-success">R$ {{product.product.price.value}}</span> à vista</h5>
+									<h2 class="text-success">
+                    <small>
+                      {{product.product.price.installments}}x
+                    </small>
+                    R$ {{product.product.price.installmentValue}}
+                  </h2>
+									<h5>
+                    ou <span class="text-success">R$ {{product.product.price.value}}</span> à vista
+                  </h5>
 								</div>
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12col-xl-6">
-									<button type="button" class="btn btn-success btn-sm btn-add" data-id="2321312"> 
+									<button type="button" class="btn btn-success btn-sm btn-add" (click)="addCart(product.product)">
 										Adicionar ao carrinho <i class="fa fa-chevron-right"></i>
 									</button>
 								</div>
