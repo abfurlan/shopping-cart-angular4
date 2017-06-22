@@ -11,7 +11,6 @@ import {CartService} from '../cart/cart.service'
 export class CardProductComponent implements OnInit {
 
   products : Product[]
-
   constructor(private productsService: ProductsService, private cartService: CartService) { }
   //constructor() { }
 
@@ -21,9 +20,7 @@ export class CardProductComponent implements OnInit {
   }
 
   addCart(Product){
-    
     this.cartService.addItem(Product)
-
   }
 
 

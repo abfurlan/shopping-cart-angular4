@@ -130,7 +130,7 @@ body{
   position: relative;
 }
 .card-block .badge:after {
-  right: -23%;
+  right: -22%;
   top:1px;
   border: solid transparent;
   content: " ";
@@ -166,4 +166,3 @@ body{
 .bg-primary {
   background-color: #ffcd00 !important;
 }
-
