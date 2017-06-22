@@ -9,10 +9,6 @@ import {CartService} from './cart.service'
 })
 export class CartComponent implements OnInit {
 
-  installments: string = "10"
-  totalIns: string = "R$ 100,00"
-  total: string = "1.000,00"
-
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
@@ -30,4 +26,17 @@ export class CartComponent implements OnInit {
   removeItem(Product){
     return this.cartService.removeItem(Product);
   }
+
+  total() :number{
+    return this.cartService.total()
+  }
+
+  totalIns() :number{
+    return this.cartService.totalIns()
+  }
+
+  installments(){
+    return this.cartService.installment()
+  }
+
 }

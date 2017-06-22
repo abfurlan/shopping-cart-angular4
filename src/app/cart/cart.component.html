@@ -4,16 +4,16 @@
 			<img class="img-thumb" src="{{product.images[0]}}" onError="this.src='/assets/img/no-img.jpg';" alt="{{product.name}}">
 			<div class="media-body">
 				<h5 class="mt-0">{{product.name}} </h5>
-				<span>{{product.price.installments}}x de R$ {{product.price.installmentValue}}</span>
-				<span>ou R$ {{product.price.value}} à vista</span>
+				<span>{{product.price.installments}}x de {{product.price.installmentValue | currency: 'BRL': true}}</span>
+				<span>ou R$ {{product.price.value | currency: 'BRL': true}} à vista</span>
 			</div>
 			<span class="remove-item" (click)="removeItem(product)">x</span>
 		</div>
 	</li>
 	<li class="total-cart text-right">
 		<p>subtotal</p>
-		<span id="sub-ins">em {{installments}}x R$ {{totalIns}}</span>
-		<span id="sub-cash">ou R$ {{total}} à vista</span>
+		<span id="sub-ins">em {{installments()}}x {{totalIns() | currency: 'BRL': true}}</span>
+		<span id="sub-cash">ou {{total() | currency: 'BRL': true}} à vista</span>
 	</li>
 </ul>
 <ul class="navbar-nav cart-items" *ngIf="items().length == 0">

@@ -27,10 +27,10 @@
                     <small>
                       {{product.product.price.installments}}x
                     </small>
-                    R$ {{product.product.price.installmentValue}}
+                    {{product.product.price.installmentValue | currency: 'BRL': true}}
                   </h2>
 									<h5>
-                    ou <span class="text-success">R$ {{product.product.price.value}}</span> à vista
+                    ou <span class="text-success">{{product.product.price.value | currency: 'BRL': true}}</span> à vista
                   </h5>
 								</div>
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12col-xl-6">

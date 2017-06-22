@@ -26,4 +26,21 @@ export class CartService {
         sessionStorage.setItem("cart",JSON.stringify(this.items))   
     }
     
+    total() :number{
+        return this.items
+        .map(item => item.price.value)
+        .reduce((prev, value)=> prev+value, 0)
+    }
+    totalIns():number{
+         return this.items
+        .map(item => item.price.installmentValue)
+        .reduce((prev, value)=> prev+value, 0)   
+    }
+    installment():number{
+        return Math.max.apply(
+            Math,this.items
+            .map(function(prod){
+            return prod.price.installments;
+        }))
+    }
 }
