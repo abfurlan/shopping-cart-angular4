@@ -166,3 +166,14 @@ body{
 .bg-primary {
   background-color: #ffcd00 !important;
 }
+#nprogress .bar {
+  background: #daaf00;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #daaf00, 0 0 5px #daaf00;
+}
+#nprogress .spinner-icon {
+  border-top-color: #daaf00;
+  border-left-color: #daaf00;
+}

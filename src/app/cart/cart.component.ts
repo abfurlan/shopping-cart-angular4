@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import {Product} from '../card-product/card-product.model';
 import {CartService} from './cart.service'
 import { default as swal } from 'sweetalert2'
+import {default as NProgress} from 'nprogress'
 
 @Component({
   selector: 'app-cart',
@@ -35,13 +36,17 @@ export class CartComponent implements OnInit {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Sim'
     }).then(function () {
+      NProgress.start()
       swal(
       'Excluído!',
       'Item excluído do carrinho.',
       'success'
       )
+      NProgress.done()
       return c.removeItem(Product)
+
     })
+
 
   }
 
